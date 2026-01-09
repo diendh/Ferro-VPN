@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0ea5e9; /* sky-500 */
+  --color-brand-secondary: #6366f1; /* indigo-500 */
+  --color-brand-dark: #0f172a; /* slate-900 */
+  --color-brand-darker: #020617; /* slate-950 */
+  --color-brand-accent: #22d3ee; /* cyan-400 */
+  
+  --font-sans: 'Intervar', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-darker text-slate-100 font-sans antialiased;
+    background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 75%);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold text-white;
+  }
+}

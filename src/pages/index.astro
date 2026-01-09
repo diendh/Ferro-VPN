@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Servers from '../components/Servers.astro';
+import Pricing from '../components/Pricing.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Ferro VPN - Safer/Speed/Trusted">
+	<Navbar />
+	<main>
+		<Hero />
+		<Features />
+		<Servers />
+		<Pricing />
+	</main>
+	<!-- Call to Action Section before footer -->
+	<section class="py-20 bg-brand-primary text-center relative overflow-hidden">
+		 <div class="absolute top-0 left-0 w-full h-full bg-black/10"></div>
+		 <div class="container mx-auto px-6 relative z-10">
+			 <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Ready to Reclaim Your Privacy?</h2>
+			 <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">Join millions of users who trust Ferro VPN for their online safety.</p>
+			 <a href="#pricing" class="inline-block px-10 py-4 rounded-xl bg-white text-brand-primary font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl">
+				 Get Ferro VPN Today
+			 </a>
+		 </div>
+	</section>
+	<Footer />
+</Layout>

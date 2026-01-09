@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact Us - Ferro VPN">
+    <Navbar />
+    <main class="pt-32 pb-20 bg-brand-darker min-h-screen">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Get in Touch</h1>
+                <p class="text-gray-400 text-lg">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div 
+                x-data="{ 
+                    subject: '', 
+                    message: '',
+                    sendEmail() {
+                        const email = 'support@ferrovpn.com';
+                        const subjectParam = encodeURIComponent(this.subject);
+                        const bodyParam = encodeURIComponent(this.message);
+                        window.location.href = `mailto:${email}?subject=${subjectParam}&body=${bodyParam}`;
+                    }
+                }"
+                class="bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl backdrop-blur-sm"
+            >
+                <div class="space-y-6">
+                    <!-- Subject Input -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            x-model="subject"
+                            placeholder="How can we help?"
+                            class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors"
+                        >
+                    </div>
+
+                    <!-- Message Input -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                        <textarea 
+                            id="message" 
+                            x-model="message"
+                            rows="6" 
+                            placeholder="Describe your issue or question..."
+                            class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors resize-none"
+                        ></textarea>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button 
+                        @click="sendEmail()"
+                        class="w-full py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-bold text-lg transition-all transform hover:scale-[1.02] shadow-lg hover:shadow-brand-primary/40 flex justify-center items-center"
+                    >
+                        <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Send Email
+                    </button>
+                </div>
+            </div>
+
+            <!-- Direct Contact Info -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-500 text-sm mb-2">Prefer to email us directly?</p>
+                <a href="mailto:support@ferrovpn.com" class="text-brand-primary hover:text-white transition-colors text-lg font-medium">
+                    support@ferrovpn.com
+                </a>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
