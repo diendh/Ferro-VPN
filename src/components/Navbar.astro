@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import logoText from '../assets/logo_text.svg';
 ---
 
 <header class="bg-brand-darker/90 backdrop-blur-md fixed w-full top-0 z-50 border-b border-white/5">
     <nav class="container mx-auto px-6 py-4" x-data="{ open: false }">
       <div class="flex items-center justify-between">
         <a href="/" class="flex items-center">
-            <img src="/logo_text.svg" alt="Ferro VPN" class="h-12" />
+            <Image src={logoText} alt="Ferro VPN" class="h-12 w-auto" />
         </a>
   
         <!-- Desktop Menu -->
