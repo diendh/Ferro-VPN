@@ -7,7 +7,7 @@
   --color-brand-darker: #020617; /* slate-950 */
   --color-brand-accent: #22d3ee; /* cyan-400 */
   
-  --font-sans: 'Intervar', 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
 @layer base {
