@@ -1,7 +1,9 @@
 ---
 ---
 
-<section id="pricing" class="py-24 bg-brand-dark overflow-hidden relative" x-data="{ annual: true, showModal: false, selectedPlan: '', selectedCrypto: 'BTC', step: 1 }">
+<section id="pricing" class="py-24 bg-brand-dark overflow-hidden relative" 
+    x-data="{ annual: true, showModal: false, selectedPlan: '', selectedCrypto: 'BTC', step: 1 }"
+    x-init="$watch('showModal', value => document.body.classList.toggle('overflow-hidden', value))">
     <!-- Background Glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl pointer-events-none opacity-20">
          <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/30 rounded-full blur-[100px]"></div>

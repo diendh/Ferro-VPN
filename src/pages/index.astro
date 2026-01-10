@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro';
 		 <div class="container mx-auto px-6 relative z-10">
 			 <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Ready to Reclaim Your Privacy?</h2>
 			 <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">Join millions of users who trust Ferro VPN for their online safety.</p>
-			 <a href="#pricing" class="inline-block px-10 py-4 rounded-xl bg-white text-brand-primary font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl">
+			 <a href="#" x-data @click.prevent="$dispatch('open-download-modal')" class="inline-block px-10 py-4 rounded-xl bg-white text-brand-primary font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl">
 				 Get Ferro VPN Today
 			 </a>
 		 </div>
