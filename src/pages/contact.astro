@@ -6,12 +6,12 @@ import Footer from '../components/Footer.astro';
 
 <Layout title="Contact Us - Ferro VPN">
     <Navbar />
-    <main class="pt-32 pb-20 bg-brand-darker min-h-screen">
+    <main class="pt-32 pb-20 bg-bg-page min-h-screen transition-colors duration-300">
         <div class="container mx-auto px-6 max-w-2xl">
             <!-- Header -->
             <div class="text-center mb-12">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Get in Touch</h1>
-                <p class="text-gray-400 text-lg">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-text-main">Get in Touch</h1>
+                <p class="text-text-muted text-lg">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
             </div>
 
             <!-- Contact Form -->
@@ -26,30 +26,30 @@ import Footer from '../components/Footer.astro';
                         window.location.href = `mailto:${email}?subject=${subjectParam}&body=${bodyParam}`;
                     }
                 }"
-                class="bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl backdrop-blur-sm"
+                class="bg-bg-surface rounded-3xl p-8 border border-border-main shadow-2xl backdrop-blur-sm"
             >
                 <div class="space-y-6">
                     <!-- Subject Input -->
                     <div>
-                        <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                        <label for="subject" class="block text-sm font-medium text-text-muted mb-2">Subject</label>
                         <input 
                             type="text" 
                             id="subject" 
                             x-model="subject"
                             placeholder="How can we help?"
-                            class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors"
+                            class="w-full bg-bg-surface-secondary border border-border-main rounded-xl px-4 py-3 text-text-main placeholder-text-muted focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors"
                         >
                     </div>
 
                     <!-- Message Input -->
                     <div>
-                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                        <label for="message" class="block text-sm font-medium text-text-muted mb-2">Message</label>
                         <textarea 
                             id="message" 
                             x-model="message"
                             rows="6" 
                             placeholder="Describe your issue or question..."
-                            class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors resize-none"
+                            class="w-full bg-bg-surface-secondary border border-border-main rounded-xl px-4 py-3 text-text-main placeholder-text-muted focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors resize-none"
                         ></textarea>
                     </div>
 
@@ -68,8 +68,8 @@ import Footer from '../components/Footer.astro';
 
             <!-- Direct Contact Info -->
             <div class="mt-12 text-center">
-                <p class="text-gray-500 text-sm mb-2">Prefer to email us directly?</p>
-                <a href="mailto:support@ferrovpn.com" class="text-brand-primary hover:text-white transition-colors text-lg font-medium">
+                <p class="text-text-muted text-sm mb-2">Prefer to email us directly?</p>
+                <a href="mailto:support@ferrovpn.com" class="text-brand-primary hover:text-text-main transition-colors text-lg font-medium">
                     support@ferrovpn.com
                 </a>
             </div>

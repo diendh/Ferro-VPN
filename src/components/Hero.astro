@@ -9,20 +9,20 @@
     </div>
 
     <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-accent text-sm font-medium mb-8 backdrop-blur-sm">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-bg-surface border border-border-main text-brand-accent text-sm font-medium mb-8 backdrop-blur-sm shadow-sm">
             <span class="flex h-2 w-2 rounded-full bg-brand-accent mr-2 animate-ping"></span>
             <span>New: 50+ Server Locations Added</span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-text-main leading-tight">
             Enjoy yourself <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">online</span>
         </h1>
         
-        <p class="text-xl md:text-2xl font-semibold text-white mb-4">
+        <p class="text-xl md:text-2xl font-semibold text-text-main mb-4">
             Safer/Speed/Trusted Anywhere You Go
         </p>
 
-        <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
             It's a completely trusted app. We encrypt your network activity and hide your IP address. We never log, track, or share your network data.
         </p>
 
@@ -30,7 +30,7 @@
             <button @click="downloadModalOpen = true" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-semibold transition-all shadow-[0_0_40px_rgba(14,165,233,0.4)] hover:shadow-[0_0_60px_rgba(99,102,241,0.5)] transform hover:-translate-y-1 cursor-pointer">
                 Get Started Now
             </button>
-            <a href="#features" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all backdrop-blur-sm hover:border-brand-primary/50">
+            <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-bg-surface hover:bg-bg-surface-secondary border border-border-main text-text-main font-semibold transition-all backdrop-blur-sm hover:border-brand-primary/50 shadow-sm">
                 View Plans
             </a>
         </div>
@@ -103,19 +103,19 @@
         </div>
 
         <!-- Trust Indicators -->
-        <div class="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="mt-16 pt-8 border-t border-border-main flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
              <!-- Trust Stats -->
              <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-white">100k+</span>
-                <span class="text-sm text-gray-400 uppercase tracking-wider">Active Users</span>
+                <span class="text-2xl font-bold text-text-main">100k+</span>
+                <span class="text-sm text-text-muted uppercase tracking-wider">Active Users</span>
              </div>
              <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-white">4.9/5</span>
-                <span class="text-sm text-gray-400 uppercase tracking-wider">User Rating</span>
+                <span class="text-2xl font-bold text-text-main">4.9/5</span>
+                <span class="text-sm text-text-muted uppercase tracking-wider">User Rating</span>
              </div>
              <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-white">99.9%</span>
-                <span class="text-sm text-gray-400 uppercase tracking-wider">Uptime</span>
+                <span class="text-2xl font-bold text-text-main">99.9%</span>
+                <span class="text-sm text-text-muted uppercase tracking-wider">Uptime</span>
              </div>
         </div>
     </div>
@@ -123,18 +123,18 @@
     <!-- Download Modal -->
     <div x-show="downloadModalOpen" style="display: none;" class="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" @click="downloadModalOpen = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
-        <div class="relative bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-lg w-full shadow-2xl transform" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95 translate-y-4" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-95 translate-y-4">
-            <button @click="downloadModalOpen = false" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <div class="relative bg-bg-surface border border-border-main rounded-2xl p-8 max-w-lg w-full shadow-2xl transform" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95 translate-y-4" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-95 translate-y-4">
+            <button @click="downloadModalOpen = false" class="absolute top-4 right-4 text-text-muted hover:text-text-main">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             
-            <h3 class="text-2xl font-bold text-white mb-2 text-center">Download Ferro VPN</h3>
-            <p class="text-gray-400 text-center mb-8">Select your platform to start secure browsing</p>
+            <h3 class="text-2xl font-bold text-text-main mb-2 text-center">Download Ferro VPN</h3>
+            <p class="text-text-muted text-center mb-8">Select your platform to start secure browsing</p>
             
             <div class="flex flex-col gap-4">
-                 <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:border-brand-primary/50 group">
+                 <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 border border-border-main hover:border-brand-primary/50 transition-all group">
                     <div class="p-3 bg-black rounded-lg">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M25.405 23.368c-0.895 1.309-1.842 2.607-3.235 2.636-1.409 0.027-1.862-0.835-3.479-0.835-1.615 0-2.119 0.809-3.447 0.864-1.353 0.054-2.385-1.356-3.245-2.597-1.769-2.553-3.12-7.202-1.305-10.038 0.908-1.414 2.531-2.309 4.296-2.341 1.309-0.025 2.544 0.88 3.344 0.88 0.799 0 2.295-1.087 3.865-0.927 0.655 0.027 2.492 0.265 3.67 1.989-0.091 0.056-2.193 1.282-2.169 3.818 0.025 3.033 2.671 4.098 2.695 4.109-0.021 0.063-0.421 1.455-1.091 2.443z" />
@@ -142,8 +142,8 @@
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-sm text-gray-400 group-hover:text-brand-accent transition-colors">Download for</span>
-                        <span class="text-lg font-bold text-white">iOS / iPadOS</span>
+                        <span class="text-sm text-text-muted group-hover:text-brand-accent transition-colors">Download for</span>
+                        <span class="text-lg font-bold text-text-main">iOS / iPadOS</span>
                     </div>
                     <div class="ml-auto">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -152,7 +152,7 @@
                     </div>
                  </a>
                  
-                 <a href="https://play.google.com/store/apps/details?id=com.vietts.vpn" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:border-brand-primary/50 group">
+                 <a href="https://play.google.com/store/apps/details?id=com.vietts.vpn" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 border border-border-main hover:border-brand-primary/50 transition-all group">
                     <div class="p-3 bg-black rounded-lg">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -189,17 +189,17 @@
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-sm text-gray-400 group-hover:text-brand-accent transition-colors">Download for</span>
-                        <span class="text-lg font-bold text-white">Android</span>
+                        <span class="text-sm text-text-muted group-hover:text-brand-accent transition-colors">Download for</span>
+                        <span class="text-lg font-bold text-text-main">Android</span>
                     </div>
                     <div class="ml-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-text-muted group-hover:text-text-main transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </div>
                  </a>
 
-                 <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:border-brand-primary/50 group">
+                 <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 border border-border-main hover:border-brand-primary/50 transition-all group">
                     <div class="p-3 bg-black rounded-lg">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M25.405 23.368c-0.895 1.309-1.842 2.607-3.235 2.636-1.409 0.027-1.862-0.835-3.479-0.835-1.615 0-2.119 0.809-3.447 0.864-1.353 0.054-2.385-1.356-3.245-2.597-1.769-2.553-3.12-7.202-1.305-10.038 0.908-1.414 2.531-2.309 4.296-2.341 1.309-0.025 2.544 0.88 3.344 0.88 0.799 0 2.295-1.087 3.865-0.927 0.655 0.027 2.492 0.265 3.67 1.989-0.091 0.056-2.193 1.282-2.169 3.818 0.025 3.033 2.671 4.098 2.695 4.109-0.021 0.063-0.421 1.455-1.091 2.443z" />
@@ -207,11 +207,11 @@
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-sm text-gray-400 group-hover:text-brand-accent transition-colors">Download for</span>
-                        <span class="text-lg font-bold text-white">macOS</span>
+                        <span class="text-sm text-text-muted group-hover:text-brand-accent transition-colors">Download for</span>
+                        <span class="text-lg font-bold text-text-main">macOS</span>
                     </div>
                     <div class="ml-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-text-muted group-hover:text-text-main transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </div>

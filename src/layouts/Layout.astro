@@ -17,6 +17,15 @@ const { title, description = "Ferro VPN - Safer/Speed/Trusted Anywhere You Go. W
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <script is:inline>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            // Default to DARK mode. Only enable light if explicitly saved in localStorage.
+            if (localStorage.getItem('color-theme') === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />

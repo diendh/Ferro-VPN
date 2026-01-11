@@ -6,32 +6,32 @@ import Footer from '../components/Footer.astro';
 
 <Layout title="Support Center - Ferro VPN">
     <Navbar />
-    <main class="pt-32 pb-20 bg-brand-darker min-h-screen">
+    <main class="pt-32 pb-20 bg-bg-page min-h-screen transition-colors duration-300">
         <div class="container mx-auto px-6 max-w-4xl">
             <!-- Header -->
             <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">How can we help you?</h1>
-                <p class="text-gray-400 text-lg">Find answers to common questions or get in touch with our team.</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-text-main">How can we help you?</h1>
+                <p class="text-text-muted text-lg">Find answers to common questions or get in touch with our team.</p>
             </div>
 
             <!-- FAQ Section -->
-            <div class="bg-white/5 rounded-3xl p-8 border border-white/10 mb-16" x-data="{ active: null }">
-                <h2 class="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">Frequently Asked Questions</h2>
+            <div class="bg-bg-surface rounded-3xl p-8 border border-border-main mb-16 shadow-sm" x-data="{ active: null }">
+                <h2 class="text-2xl font-bold text-text-main mb-8 border-b border-border-main pb-4">Frequently Asked Questions</h2>
 
                 <div class="space-y-4">
                     <!-- FAQ 1 -->
-                    <div class="border border-white/5 rounded-xl overflow-hidden bg-brand-dark/50">
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
                         <button 
                             @click="active = (active === 1 ? null : 1)"
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors focus:outline-none"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
                         >
-                            <span class="font-medium text-white">How do I connect to Ferro VPN?</span>
+                            <span class="font-medium text-text-main">How do I connect to Ferro VPN?</span>
                             <span class="text-brand-primary text-xl font-bold" x-text="active === 1 ? '−' : '+'">+</span>
                         </button>
                         <div 
                             x-show="active === 1" 
                             x-collapse
-                            class="px-6 pb-4 text-gray-400 border-t border-white/5 bg-black/20"
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
                             style="display: none;"
                         >
                             <p class="mt-4">Simply download the Ferro VPN app, sign in (or use the free version), select a server location from the list, and tap the large "Connect" button. When the shield icon turns green, you are securely connected.</p>
@@ -39,18 +39,18 @@ import Footer from '../components/Footer.astro';
                     </div>
 
                     <!-- FAQ 2 -->
-                    <div class="border border-white/5 rounded-xl overflow-hidden bg-brand-dark/50">
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
                         <button 
                             @click="active = (active === 2 ? null : 2)"
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors focus:outline-none"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
                         >
-                            <span class="font-medium text-white">Why is my connection slow?</span>
+                            <span class="font-medium text-text-main">Why is my connection slow?</span>
                             <span class="text-brand-primary text-xl font-bold" x-text="active === 2 ? '−' : '+'">+</span>
                         </button>
                         <div 
                             x-show="active === 2" 
                             x-collapse
-                            class="px-6 pb-4 text-gray-400 border-t border-white/5 bg-black/20"
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
                             style="display: none;"
                         >
                             <p class="mt-4">Speed can depend on your distance to the server. Try connecting to a server closer to your physical location. Switching protocols in the settings may also improve performance.</p>
@@ -58,18 +58,18 @@ import Footer from '../components/Footer.astro';
                     </div>
 
                      <!-- FAQ 3 -->
-                     <div class="border border-white/5 rounded-xl overflow-hidden bg-brand-dark/50">
+                     <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
                         <button 
                             @click="active = (active === 3 ? null : 3)"
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors focus:outline-none"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
                         >
-                            <span class="font-medium text-white">How many devices can I use?</span>
+                            <span class="font-medium text-text-main">How many devices can I use?</span>
                             <span class="text-brand-primary text-xl font-bold" x-text="active === 3 ? '−' : '+'">+</span>
                         </button>
                         <div 
                             x-show="active === 3" 
                             x-collapse
-                            class="px-6 pb-4 text-gray-400 border-t border-white/5 bg-black/20"
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
                             style="display: none;"
                         >
                             <p class="mt-4">Free users can use Ferro VPN on one device. <strong>Premium (Pro) users</strong> can connect up to <strong>2 devices</strong> simultaneously with a single subscription.</p>
@@ -77,18 +77,18 @@ import Footer from '../components/Footer.astro';
                     </div>
 
                     <!-- FAQ 4 -->
-                    <div class="border border-white/5 rounded-xl overflow-hidden bg-brand-dark/50">
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
                         <button 
                             @click="active = (active === 4 ? null : 4)"
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors focus:outline-none"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
                         >
-                            <span class="font-medium text-white">How do I manage or cancel my subscription?</span>
+                            <span class="font-medium text-text-main">How do I manage or cancel my subscription?</span>
                             <span class="text-brand-primary text-xl font-bold" x-text="active === 4 ? '−' : '+'">+</span>
                         </button>
                         <div 
                             x-show="active === 4" 
                             x-collapse
-                            class="px-6 pb-4 text-gray-400 border-t border-white/5 bg-black/20"
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
                             style="display: none;"
                         >
                             <p class="mt-4">Subscriptions are managed directly by the store you downloaded the app from.</p>
@@ -100,18 +100,18 @@ import Footer from '../components/Footer.astro';
                     </div>
 
                      <!-- FAQ 5 -->
-                     <div class="border border-white/5 rounded-xl overflow-hidden bg-brand-dark/50">
+                     <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
                         <button 
                             @click="active = (active === 5 ? null : 5)"
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors focus:outline-none"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
                         >
-                            <span class="font-medium text-white">Does Ferro VPN block ads?</span>
+                            <span class="font-medium text-text-main">Does Ferro VPN block ads?</span>
                             <span class="text-brand-primary text-xl font-bold" x-text="active === 5 ? '−' : '+'">+</span>
                         </button>
                         <div 
                             x-show="active === 5" 
                             x-collapse
-                            class="px-6 pb-4 text-gray-400 border-t border-white/5 bg-black/20"
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
                             style="display: none;"
                         >
                             <p class="mt-4">Yes! <strong>Premium users</strong> benefit from our integrated <strong>Advanced Ad Blocker</strong> technology. This powerful feature automatically blocks annoying ads, trackers, and malicious websites, giving you a cleaner, faster, and safer browsing experience.</p>
@@ -122,8 +122,8 @@ import Footer from '../components/Footer.astro';
 
             <!-- Contact Section -->
             <div class="text-center bg-brand-primary/10 rounded-2xl p-10 border border-brand-primary/30">
-                <h3 class="text-2xl font-bold text-white mb-4">Still need help?</h3>
-                <p class="text-gray-300 mb-8">Our support team is available to assist you with any technical issues.</p>
+                <h3 class="text-2xl font-bold text-text-main mb-4">Still need help?</h3>
+                <p class="text-text-muted mb-8">Our support team is available to assist you with any technical issues.</p>
                 <a href="mailto:support@ferrovpn.com" class="inline-flex items-center px-8 py-3 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-semibold transition-all shadow-lg hover:shadow-brand-primary/40">
                     <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
