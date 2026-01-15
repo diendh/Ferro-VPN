@@ -1,157 +1,134 @@
 ---
 ---
 
-<section id="pricing" class="py-24 bg-bg-page overflow-hidden relative transition-colors duration-300" 
+<section id="pricing" class="py-24 overflow-hidden relative" 
     x-data="{ annual: true, showModal: false, selectedPlan: '', selectedCrypto: 'BTC', step: 1 }"
     x-init="$watch('showModal', value => document.body.classList.toggle('overflow-hidden', value))">
     <!-- Background Glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl pointer-events-none opacity-20">
-         <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/30 rounded-full blur-[100px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl pointer-events-none opacity-30">
+         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/20 rounded-full blur-[120px] mix-blend-screen"></div>
+         <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-secondary/20 rounded-full blur-[100px] mix-blend-screen"></div>
     </div>
 
     <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-text-main">Simple, Transparent Pricing</h2>
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-text-main">
+                Simple, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Transparent</span> Pricing
+            </h2>
             
             <!-- Toggle Switch -->
-            <div class="flex items-center justify-center space-x-4 mt-8">
-                <span class="text-lg" :class="!annual ? 'text-text-main font-semibold' : 'text-text-muted'">Monthly</span>
+            <div class="flex items-center justify-center gap-6 mt-8">
+                <span class="text-lg transition-colors duration-300" :class="!annual ? 'text-text-main font-semibold' : 'text-text-muted'">Monthly</span>
                 <button 
-                    class="relative w-16 h-8 rounded-full bg-bg-surface border border-border-main transition-colors focus:outline-none"
+                    class="relative w-20 h-10 rounded-full bg-bg-surface/50 border border-brand-primary/30 backdrop-blur-sm transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary/50"
                     @click="annual = !annual"
                     aria-label="Toggle billing cycle"
                 >
                     <div 
-                        class="absolute top-1 left-1 w-6 h-6 rounded-full bg-brand-primary shadow-lg transition-transform duration-300"
-                        :class="annual ? 'translate-x-8' : 'translate-x-0'"
+                        class="absolute top-1 left-1 w-8 h-8 rounded-full bg-brand-primary shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-transform duration-300 transform"
+                        :class="annual ? 'translate-x-10' : 'translate-x-0'"
                     ></div>
                 </button>
-                <span class="text-lg" :class="annual ? 'text-text-main font-semibold' : 'text-text-muted'">
-                    Yearly <span class="text-sm text-brand-accent font-bold ml-1">-20%</span>
-                </span>
+                <div class="flex items-center gap-2">
+                    <span class="text-lg transition-colors duration-300" :class="annual ? 'text-text-main font-semibold' : 'text-text-muted'">Yearly</span>
+                    <span class="px-2 py-1 rounded-md bg-brand-accent/20 text-brand-accent text-xs font-bold uppercase tracking-wider">-20%</span>
+                </div>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
             <!-- Basic Plan -->
-            <div class="p-8 rounded-3xl bg-bg-surface border border-border-main hover:border-brand-primary/30 transition-all hover:scale-105 flex flex-col shadow-sm">
+            <div class="glass-card rounded-3xl p-8 flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2">
                 <h3 class="text-2xl font-bold mb-2 text-text-main">Basic</h3>
-                <div class="text-3xl font-bold mb-4 text-brand-primary">
+                <div class="text-4xl font-bold mb-4 text-text-main">
                     <span x-text="annual ? '$3.99' : '$4.99'">$4.99</span><span class="text-sm text-text-muted font-normal">/mo</span>
                 </div>
-                <p class="text-text-muted mb-8 text-sm">Essential privacy for casual users.</p>
+                <p class="text-text-muted mb-8 text-sm leading-relaxed">Essential privacy for casual users.</p>
                 <ul class="space-y-4 mb-8 flex-grow">
-                    <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        3 Devices
-                    </li>
-                    <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        High Speed
-                    </li>
-                     <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Unlimited Bandwidth
-                    </li>
-                    <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        No Logs Policy
-                    </li>
-                    <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Ad Blocking
-                    </li>
+                    {[
+                        "3 Devices",
+                        "High Speed",
+                        "Unlimited Bandwidth",
+                        "No Logs Policy",
+                        "Ad Blocking"
+                    ].map(item => (
+                        <li class="flex items-center text-text-muted">
+                            <svg class="w-5 h-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            {item}
+                        </li>
+                    ))}
                 </ul>
-                <button @click="selectedPlan = 'Basic'; showModal = true; step = 1" class="block w-full text-center py-3 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:hover:bg-white/20 text-text-main font-semibold transition-all border border-border-main">Choose Basic</button>
+                <button @click="selectedPlan = 'Basic'; showModal = true; step = 1" class="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-text-main font-semibold transition-all backdrop-blur-sm">Choose Basic</button>
             </div>
 
             <!-- Pro Plan (Feautured) -->
-            <div class="relative p-8 rounded-3xl bg-brand-primary/10 border border-brand-primary/50 transition-all hover:scale-105 flex flex-col shadow-[0_0_40px_rgba(14,165,233,0.15)]">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-primary to-brand-secondary text-white text-xs font-bold px-6 py-2 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
+            <div class="glass-panel p-8 rounded-3xl border-brand-primary/50 relative transform scale-105 z-10 shadow-[0_0_40px_rgba(59,130,246,0.15)]">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-primary to-brand-accent text-white text-xs font-bold px-6 py-2 rounded-full uppercase tracking-wider shadow-lg shadow-brand-primary/20">Most Popular</div>
                 <h3 class="text-2xl font-bold mb-2 text-text-main">Pro</h3>
-                <div class="text-3xl font-bold mb-4 text-brand-primary">
+                <div class="text-4xl font-bold mb-4 text-brand-primary">
                     <span x-text="annual ? '$7.99' : '$9.99'">$9.99</span><span class="text-sm text-text-muted font-normal">/mo</span>
                 </div>
-                <p class="text-text-muted mb-8 text-sm">Best for streaming & multi-device.</p>
+                <p class="text-text-muted mb-8 text-sm leading-relaxed">Best for streaming & multi-device.</p>
                 <ul class="space-y-4 mb-8 flex-grow">
-                    <li class="flex items-center text-text-main">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Unlock all 100+ Locations
-                    </li>
-                    <li class="flex items-center text-text-main">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        10 Devices
-                    </li>
-                    <li class="flex items-center text-text-main">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                         Multi-hop (Double VPN)
-                    </li>
-                     <li class="flex items-center text-text-main">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Streaming & Gaming Optimization
-                    </li>
-                    <li class="flex items-center text-text-main">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Advanced Ad Blocking
-                    </li>
-                     <li class="flex items-center text-text-main">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Priority Support
-                    </li>
+                     {[
+                        "Unlock all 100+ Locations",
+                        "10 Devices",
+                        "Multi-hop (Double VPN)",
+                        "Streaming & Gaming Optimization",
+                        "Advanced Ad Blocking",
+                        "Priority Support"
+                    ].map(item => (
+                        <li class="flex items-center text-text-main font-medium">
+                            <svg class="w-5 h-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            {item}
+                        </li>
+                    ))}
                 </ul>
-                 <button @click="selectedPlan = 'Pro'; showModal = true; step = 1" class="block w-full text-center py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-bold text-lg transition-all shadow-lg hover:shadow-brand-primary/50">Go Premium</button>
+                 <button @click="selectedPlan = 'Pro'; showModal = true; step = 1" class="w-full py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:-translate-y-1">Go Premium</button>
             </div>
 
             <!-- Ultimate Plan -->
-             <div class="p-8 rounded-3xl bg-bg-surface border border-border-main hover:border-brand-primary/30 transition-all hover:scale-105 flex flex-col shadow-sm">
+             <div class="glass-card rounded-3xl p-8 flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2 opacity-80 hover:opacity-100">
                 <h3 class="text-2xl font-bold mb-2 text-text-main">Ultimate</h3>
-                <div class="text-3xl font-bold mb-4 text-text-muted">
+                <div class="text-4xl font-bold mb-4 text-text-muted">
                     Coming Soon
                 </div>
-                <p class="text-text-muted mb-8 text-sm">Maximum security for power users.</p>
+                <p class="text-text-muted mb-8 text-sm leading-relaxed">Maximum security for power users.</p>
                 <ul class="space-y-4 mb-8 flex-grow">
-                     <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Unlimited Devices
-                    </li>
-                    <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Max Speed (10Gbps)
-                    </li>
-                    <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Dedicated IP
-                    </li>
-                     <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Priority 24/7 Support
-                    </li>
-                     <li class="flex items-center text-text-muted">
-                        <svg class="w-5 h-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Ad Blocking
-                    </li>
+                     {[
+                        "Unlimited Devices",
+                        "Max Speed (10Gbps)",
+                        "Dedicated IP",
+                        "Priority 24/7 Support",
+                        "Ad Blocking"
+                    ].map(item => (
+                        <li class="flex items-center text-text-muted">
+                            <svg class="w-5 h-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            {item}
+                        </li>
+                    ))}
                 </ul>
-                <button @click="selectedPlan = 'Ultimate'; showModal = true; step = 1" class="block w-full text-center py-3 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:hover:bg-white/20 text-text-main font-semibold transition-all border border-border-main">Choose Ultimate</button>
+                <button disabled class="w-full py-4 rounded-xl bg-white/5 border border-white/5 text-text-muted font-semibold cursor-not-allowed">Waitlist</button>
             </div>
         </div>
 
         <!-- Payment Methods -->
-        <div class="mt-16 text-center border-t border-border-main pt-8">
-            <p class="text-text-muted text-sm mb-6">Secure anonymous payments via Crypto</p>
-            <div class="flex flex-wrap justify-center items-center gap-6 opacity-70 grayscale hover:grayscale-0 transition-all">
+        <div class="mt-20 text-center border-t border-white/10 pt-10">
+            <p class="text-text-muted text-sm mb-6 uppercase tracking-widest font-medium">Secure anonymous payments via Crypto</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                 <!-- Bitcoin -->
-                <div class="flex items-center gap-2 text-text-main font-bold cursor-pointer" @click="selectedCrypto = 'BTC'; showModal = true">
+                <div class="flex items-center gap-3 text-text-main font-bold cursor-pointer hover:text-brand-primary transition-colors" @click="selectedCrypto = 'BTC'; showModal = true">
                     <svg class="h-8 w-8 text-[#F7931A]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.24 14.9.358c6.43 1.605 10.342 8.115 8.738 14.548v-.002zm-4.354-3.046c.313-2.094-1.283-3.223-3.465-3.975l.708-2.84-1.728-.43-.69 2.766c-.454-.114-.92-.22-1.385-.326l.698-2.828-1.725-.43-.71 2.84c-.37-.097-.736-.175-1.096-.258l-.02-.08-2.38.595.46 1.838c.01.003.3.067.294.062.58.145.688.528.67 1.084l-.67 2.68c.04.01.093.024.15.06l-.152-.038-2.227 8.928c-.168.42-.6.545-1.57.295-.005.008-.292-.062-.292-.062l-.89 2.062 2.247.56c.84.21 1.65.44 2.45.65l-.715 2.876 1.727.43.712-2.855c.473.13.932.245 1.38.357l-.7 2.81 1.725.43.715-2.866c2.943.555 5.148.33 6.075-2.324.965-2.09.288-3.904-1.666-4.945 1.183-.273 2.08-1.043 2.32-2.64z"/>
                     </svg>
-                    <span>Bitcoin</span>
+                    <span class="text-lg">Bitcoin</span>
                 </div>
                 <!-- USDT -->
-                 <div class="flex items-center gap-2 text-text-main font-bold cursor-pointer" @click="selectedCrypto = 'USDT'; showModal = true">
+                 <div class="flex items-center gap-3 text-text-main font-bold cursor-pointer hover:text-brand-primary transition-colors" @click="selectedCrypto = 'USDT'; showModal = true">
                     <svg class="h-8 w-8 text-[#26A17B]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14.5,10.6c0-0.1-0.1-0.2-0.2-0.2c-0.1,0-0.2-0.1-0.2-0.1c-0.2-0.1-0.4-0.1-0.6-0.1c-0.2,0-0.4,0-0.6,0.1 c-0.1,0-0.1,0.1-0.2,0.1c0,0-0.1,0.1-0.1,0.2c-0.1,0.1-0.1,0.2-0.1,0.4c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.1,0.2,0.2,0.3 c0,0,0.1,0.1,0.1,0.1c0.2,0.1,0.4,0.1,0.6,0.1c0.2,0,0.4,0,0.6-0.1c0,0,0.1-0.1,0.1-0.1c0.1-0.1,0.2-0.2,0.2-0.3 C14.6,10.8,14.6,10.7,14.5,10.6L14.5,10.6z M16.5,8c0-2-2.9-3.7-6.5-3.7C6.4,4.4,3.5,6,3.5,8c0,0.6,0.2,1.2,0.6,1.7L2.4,18 h2.8l0.9-4.3c1.1,0.2,2.3,0.4,3.5,0.4c0.1,0,0.3,0,0.4,0l0.7,5.9h3L13,14.1c1.2,0,2.4-0.1,3.5-0.4l0.9,4.3h2.8l-1.6-8.3 C16.3,9.2,16.5,8.6,16.5,8L16.5,8z M10,12.8c-2.4,0-4.4-0.8-4.4-1.7C5.6,10.1,7.6,9.3,10,9.3c2.4,0,4.4,0.8,4.4,1.7 C14.4,11.9,12.4,12.8,10,12.8L10,12.8z M10,5.7c2.8,0,5,1.4,5,3.1c0,0.2,0,0.4-0.1,0.6c-1,0.4-2.8,0.7-4.9,0.7 c-2.1,0-3.9-0.3-4.9-0.7c0-0.2-0.1-0.4-0.1-0.6C5,7.1,7.2,5.7,10,5.7L10,5.7z"/>
                     </svg>
-                    <span>USDT</span>
+                    <span class="text-lg">USDT</span>
                 </div>
             </div>
         </div>
@@ -159,111 +136,118 @@
         <!-- Payment Modal (Frontend Mockup for BE) -->
         <div x-show="showModal" 
              style="display: none;"
-             class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+             class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
              aria-modal="true" role="dialog">
              
-            <div class="relative w-full max-w-md bg-bg-surface border border-border-main rounded-2xl shadow-2xl p-6"
-                 @click.away="showModal = false">
+            <div class="relative w-full max-w-md glass-panel border border-white/10 rounded-3xl shadow-2xl p-8 transform transition-all"
+                 @click.away="showModal = false"
+                 x-transition:enter="transition ease-out duration-300" 
+                 x-transition:enter-start="opacity-0 scale-95 translate-y-4" 
+                 x-transition:enter-end="opacity-100 scale-100 translate-y-0" 
+                 x-transition:leave="transition ease-in duration-200" 
+                 x-transition:leave-start="opacity-100 scale-100 translate-y-0" 
+                 x-transition:leave-end="opacity-0 scale-95 translate-y-4">
                 
                 <!-- Close Button -->
-                <button @click="showModal = false" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <button @click="showModal = false" class="absolute top-4 right-4 text-text-muted hover:text-text-main transition-colors">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
                 <div x-show="!step || step === 1">
-                    <h3 class="text-xl font-bold text-text-main mb-2">Select Payment Method</h3>
-                    <p class="text-text-muted text-sm mb-6">Choose your preferred crypto currency required for <span x-text="selectedPlan" class="font-bold text-brand-primary"></span> Plan.</p>
+                    <h3 class="text-2xl font-bold text-text-main mb-2">Select Payment Method</h3>
+                    <p class="text-text-muted text-sm mb-8">Choose your preferred crypto currency required for <span x-text="selectedPlan" class="font-bold text-brand-primary"></span> Plan.</p>
                     
-                    <div class="space-y-3">
-                        <button @click="selectedCrypto = 'BTC'; step = 'coming'" class="w-full flex items-center justify-between p-4 rounded-xl border border-border-main hover:border-brand-primary/50 bg-bg-surface-secondary hover:bg-gray-100 dark:hover:bg-white/10 transition-all group">
-                            <div class="flex items-center gap-3">
-                                <div class="text-[#F7931A]"> <!-- BTC Icon -->
+                    <div class="space-y-4">
+                        <button @click="selectedCrypto = 'BTC'; step = 'coming'" class="w-full flex items-center justify-between p-4 rounded-xl border border-white/10 hover:border-brand-primary/50 bg-white/5 hover:bg-white/10 transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="text-[#F7931A] bg-white/10 p-2 rounded-lg"> <!-- BTC Icon -->
                                     <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.24 14.9.358c6.43 1.605 10.342 8.115 8.738 14.548v-.002zm-4.354-3.046c.313-2.094-1.283-3.223-3.465-3.975l.708-2.84-1.728-.43-.69 2.766c-.454-.114-.92-.22-1.385-.326l.698-2.828-1.725-.43-.71 2.84c-.37-.097-.736-.175-1.096-.258l-.02-.08-2.38.595.46 1.838c.01.003.3.067.294.062.58.145.688.528.67 1.084l-.67 2.68c.04.01.093.024.15.06l-.152-.038-2.227 8.928c-.168.42-.6.545-1.57.295-.005.008-.292-.062-.292-.062l-.89 2.062 2.247.56c.84.21 1.65.44 2.45.65l-.715 2.876 1.727.43.712-2.855c.473.13.932.245 1.38.357l-.7 2.81 1.725.43.715-2.866c2.943.555 5.148.33 6.075-2.324.965-2.09.288-3.904-1.666-4.945 1.183-.273 2.08-1.043 2.32-2.64z"/></svg>
                                 </div>
                                 <div class="text-left">
-                                    <div class="text-text-main font-bold group-hover:text-brand-primary">Bitcoin</div>
+                                    <div class="text-text-main font-bold text-lg group-hover:text-brand-primary transition-colors">Bitcoin</div>
                                     <div class="text-xs text-text-muted">BTC Network</div>
                                 </div>
                             </div>
-                            <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                            <svg class="h-5 w-5 text-gray-500 group-hover:text-brand-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                         </button>
                         
-                        <button @click="selectedCrypto = 'USDT'; step = 'coming'" class="w-full flex items-center justify-between p-4 rounded-xl border border-border-main hover:border-brand-primary/50 bg-bg-surface-secondary hover:bg-gray-100 dark:hover:bg-white/10 transition-all group">
-                            <div class="flex items-center gap-3">
-                                <div class="text-[#26A17B]"> <!-- USDT Icon -->
+                        <button @click="selectedCrypto = 'USDT'; step = 'coming'" class="w-full flex items-center justify-between p-4 rounded-xl border border-white/10 hover:border-brand-primary/50 bg-white/5 hover:bg-white/10 transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="text-[#26A17B] bg-white/10 p-2 rounded-lg"> <!-- USDT Icon -->
                                     <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.5,10.6c0-0.1-0.1-0.2-0.2-0.2c-0.1,0-0.2-0.1-0.2-0.1c-0.2-0.1-0.4-0.1-0.6-0.1c-0.2,0-0.4,0-0.6,0.1 c-0.1,0-0.1,0.1-0.2,0.1c0,0-0.1,0.1-0.1,0.2c-0.1,0.1-0.1,0.2-0.1,0.4c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.1,0.2,0.2,0.3 c0,0,0.1,0.1,0.1,0.1c0.2,0.1,0.4,0.1,0.6,0.1c0.2,0,0.4,0,0.6-0.1c0,0,0.1-0.1,0.1-0.1c0.1-0.1,0.2-0.2,0.2-0.3 C14.6,10.8,14.6,10.7,14.5,10.6L14.5,10.6z M16.5,8c0-2-2.9-3.7-6.5-3.7C6.4,4.4,3.5,6,3.5,8c0,0.6,0.2,1.2,0.6,1.7L2.4,18 h2.8l0.9-4.3c1.1,0.2,2.3,0.4,3.5,0.4c0.1,0,0.3,0,0.4,0l0.7,5.9h3L13,14.1c1.2,0,2.4-0.1,3.5-0.4l0.9,4.3h2.8l-1.6-8.3 C16.3,9.2,16.5,8.6,16.5,8L16.5,8z M10,12.8c-2.4,0-4.4-0.8-4.4-1.7C5.6,10.1,7.6,9.3,10,9.3c2.4,0,4.4,0.8,4.4,1.7 C14.4,11.9,12.4,12.8,10,12.8L10,12.8z M10,5.7c2.8,0,5,1.4,5,3.1c0,0.2,0,0.4-0.1,0.6c-1,0.4-2.8,0.7-4.9,0.7 c-2.1,0-3.9-0.3-4.9-0.7c0-0.2-0.1-0.4-0.1-0.6C5,7.1,7.2,5.7,10,5.7L10,5.7z"/></svg>
                                 </div>
                                 <div class="text-left">
-                                    <div class="text-text-main font-bold group-hover:text-brand-primary">Tether (USDT)</div>
+                                    <div class="text-text-main font-bold text-lg group-hover:text-brand-primary transition-colors">Tether (USDT)</div>
                                     <div class="text-xs text-text-muted">TRC20 Network</div>
                                 </div>
                             </div>
-                            <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                            <svg class="h-5 w-5 text-gray-500 group-hover:text-brand-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                         </button>
                     </div>
                 </div>
 
                 <div x-show="step === 2">
-                     <div class="flex items-center mb-4">
-                        <button @click="step = 1" class="text-text-muted hover:text-text-main mr-2">
-                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                     <div class="flex items-center mb-6">
+                        <button @click="step = 1" class="text-text-muted hover:text-text-main mr-4 transition-colors">
+                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                         </button>
-                        <h3 class="text-xl font-bold text-text-main">Make Payment</h3>
+                        <h3 class="text-2xl font-bold text-text-main">Make Payment</h3>
                      </div>
 
-                     <div class="bg-white p-4 rounded-xl mb-4 flex justify-center">
+                     <div class="bg-white p-6 rounded-2xl mb-6 flex justify-center shadow-inner">
                          <!-- Placeholder QR Code for BE to implement -->
-                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ExampleAddressForBackendDemo" alt="QR Code" class="w-40 h-40 mix-blend-multiply opacity-90">
+                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ExampleAddressForBackendDemo" alt="QR Code" class="w-48 h-48 mix-blend-multiply opacity-90">
                      </div>
 
-                     <div class="mb-4">
-                        <p class="text-text-muted text-xs mb-1">Send exact amount:</p>
-                        <div class="flex items-center justify-between bg-bg-surface-secondary p-3 rounded-lg border border-border-main">
-                            <span class="text-brand-accent font-mono text-lg" x-text="selectedCrypto === 'BTC' ? '0.0012 BTC' : '49.99 USDT'"></span>
-                            <button class="text-xs bg-bg-surface hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 px-2 py-1 rounded text-text-main dark:text-white transition-colors">Copy</button>
+                     <div class="mb-4 space-y-4">
+                        <div>
+                            <p class="text-text-muted text-xs mb-2 uppercase tracking-wider font-bold">Send exact amount</p>
+                            <div class="flex items-center justify-between bg-bg-surface-secondary/50 p-4 rounded-xl border border-white/10 group hover:border-brand-primary/30 transition-colors">
+                                <span class="text-brand-accent font-mono text-xl font-bold tracking-tight" x-text="selectedCrypto === 'BTC' ? '0.0012 BTC' : '49.99 USDT'"></span>
+                                <button class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-text-main transition-colors font-medium">Copy</button>
+                            </div>
                         </div>
+
+                        <div>
+                            <p class="text-text-muted text-xs mb-2 uppercase tracking-wider font-bold">To Address (<span x-text="selectedCrypto"></span>)</p>
+                            <div class="flex items-center justify-between bg-bg-surface-secondary/50 p-4 rounded-xl border border-white/10 group hover:border-brand-primary/30 transition-colors">
+                                <span class="text-text-main font-mono text-xs sm:text-sm truncate mr-2 select-all">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</span>
+                                <button class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-text-main transition-colors font-medium">Copy</button>
+                            </div>
+                         </div>
                      </div>
 
-                     <div class="mb-6">
-                        <p class="text-text-muted text-xs mb-1">To Address (<span x-text="selectedCrypto"></span>):</p>
-                        <div class="flex items-center justify-between bg-bg-surface-secondary p-3 rounded-lg border border-border-main">
-                            <span class="text-text-main font-mono text-xs truncate mr-2">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</span>
-                            <button class="text-xs bg-bg-surface hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 px-2 py-1 rounded text-text-main dark:text-white transition-colors">Copy</button>
-                        </div>
-                     </div>
-
-                     <button @click="step = 3" class="w-full py-3 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-bold transition-all shadow-lg shadow-brand-primary/25">
+                     <button @click="step = 3" class="w-full py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-bold transition-all shadow-lg shadow-brand-primary/25 hover:shadow-brand-primary/40 mt-4">
                         I Have Sent Payment
                      </button>
                 </div>
 
-                <div x-show="step === 3" class="text-center py-8">
-                    <div class="inline-block relative w-16 h-16 mb-4">
-                        <div class="absolute inset-0 rounded-full border-4 border-gray-200 dark:border-white/10"></div>
+                <div x-show="step === 3" class="text-center py-12">
+                    <div class="inline-block relative w-20 h-20 mb-6">
+                        <div class="absolute inset-0 rounded-full border-4 border-white/10"></div>
                         <div class="absolute inset-0 rounded-full border-4 border-t-brand-primary animate-spin"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-text-main mb-2">Verifying Transaction</h3>
-                    <p class="text-text-muted text-sm">Please wait while we confirm your payment on the blockchain. This usually takes 1-5 minutes.</p>
+                    <h3 class="text-2xl font-bold text-text-main mb-3">Verifying Transaction</h3>
+                    <p class="text-text-muted text-base max-w-xs mx-auto">Please wait while we confirm your payment on the blockchain. This usually takes 1-5 minutes.</p>
                 </div>
 
                 <!-- Coming Soon Step -->
-                <div x-show="step === 'coming'" class="text-center py-8">
-                    <div class="inline-block p-4 rounded-full bg-bg-surface-secondary mb-4">
-                        <svg class="w-12 h-12 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div x-show="step === 'coming'" class="text-center py-12">
+                    <div class="inline-flex p-5 rounded-full bg-white/5 mb-6 border border-white/10">
+                        <svg class="w-16 h-16 text-brand-primary opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-text-main mb-2">Coming Soon</h3>
-                    <p class="text-text-muted mb-6">This payment method is currently under maintenance. Please try again later.</p>
-                    <button @click="step = 1" class="px-6 py-2 rounded-lg bg-bg-surface-secondary hover:bg-gray-100 dark:hover:bg-white/10 text-text-main font-semibold transition-all border border-border-main">
+                    <h3 class="text-3xl font-bold text-text-main mb-3">Coming Soon</h3>
+                    <p class="text-text-muted mb-8 text-lg">This payment method is currently under maintenance. Please try again later.</p>
+                    <button @click="step = 1" class="px-8 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-text-main font-semibold transition-all border border-white/10 hover:border-white/20">
                         Go Back
                     </button>
                 </div>
 
             </div>
         </div>
-    </div>
     </div>
 </section>

@@ -3,21 +3,27 @@ import { Image } from 'astro:assets';
 import logoText from '../../assets/logo_text.svg';
 ---
 
-<footer class="bg-bg-page border-t border-border-main py-12 text-sm text-text-muted transition-colors duration-300">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                <a href="/" class="inline-block mb-4 bg-white rounded-xl px-3 py-1.5 shadow-lg">
+<footer class="relative mt-20 border-t border-border-main/50 text-sm text-text-muted transition-colors duration-300 overflow-hidden">
+    <div class="absolute inset-0 bg-bg-surface-secondary/50 backdrop-blur-md -z-10"></div>
+    <div class="container mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <a href="/" class="inline-block mb-4 hover:opacity-80 transition-opacity">
                     <Image src={logoText} alt="Ferro VPN" class="h-8 w-auto" />
                 </a>
-                <p>&copy; {new Date().getFullYear()} Ferro VPN. All rights reserved.</p>
+                <p class="max-w-xs text-text-muted/80">
+                    Trusted by millions for ultimate privacy and speed. Secure your digital life with Ferro VPN.
+                </p>
+                <div class="mt-4 text-xs opacity-60">
+                    &copy; {new Date().getFullYear()} Ferro VPN. All rights reserved.
+                </div>
             </div>
             
-            <div class="flex space-x-6">
-                <a href="/privacy" class="hover:text-text-main transition-colors">Privacy Policy</a>
-                <a href="/terms" class="hover:text-text-main transition-colors">Terms of Service</a>
-                <a href="/support" class="hover:text-text-main transition-colors">Support</a>
-                <a href="/contact" class="hover:text-text-main transition-colors">Contact</a>
+            <div class="grid grid-cols-2 md:flex md:space-x-8 gap-y-4 gap-x-8 text-base">
+                <a href="/privacy" class="hover:text-brand-primary transition-colors font-medium">Privacy Policy</a>
+                <a href="/terms" class="hover:text-brand-primary transition-colors font-medium">Terms of Service</a>
+                <a href="/support" class="hover:text-brand-primary transition-colors font-medium">Support</a>
+                <a href="/contact" class="hover:text-brand-primary transition-colors font-medium">Contact</a>
             </div>
         </div>
     </div>

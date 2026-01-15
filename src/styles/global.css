@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #0ea5e9; /* sky-500 */
+  --color-brand-primary: #3B82F6; /* blue-500 - Trustworthy Blue */
   --color-brand-secondary: #6366f1; /* indigo-500 */
-  --color-brand-accent: #22d3ee; /* cyan-400 */
+  --color-brand-accent: #06b6d4; /* cyan-500 - Tech/Speed */
+  --color-brand-dark: #0f172a; /* slate-900 */
   
   /* Semantic Colors mapped to variables */
   --color-bg-page: var(--bg-page);
@@ -14,40 +15,63 @@
   --color-border-main: var(--border-main);
   
   --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --radius-card: 1.5rem; /* 24px - Softer corners */
+  --radius-button: 9999px; /* Pill shape */
 }
 
-/* Light Theme (Default) */
+/* Light Theme */
 :root {
-  --bg-page: #f8fafc;        /* slate-50 */
-  --bg-surface: #ffffff;     /* white */
-  --bg-surface-secondary: #f1f5f9; /* slate-100 */
+  --bg-page: #f0f4f8;        /* Light blue-grey tint */
+  --bg-surface: rgba(255, 255, 255, 0.7); /* Glassy white */
+  --bg-surface-secondary: rgba(241, 245, 249, 0.5);
   --text-main: #0f172a;      /* slate-900 */
-  --text-muted: #64748b;     /* slate-500 */
-  --border-main: #e2e8f0;    /* slate-200 */
+  --text-muted: #475569;     /* slate-600 */
+  --border-main: rgba(226, 232, 240, 0.6);
 }
 
-/* Dark Theme */
+/* Dark Theme (Default/Preferred for Premium) */
 .dark {
-  --bg-page: #020617;        /* slate-950 */
-  --bg-surface: #0f172a;     /* slate-900 */
-  --bg-surface-secondary: #1e293b; /* slate-800 */
+  --bg-page: #020617;        /* slate-950 - Deep dark */
+  --bg-surface: rgba(15, 23, 42, 0.6);     /* Glassy dark */
+  --bg-surface-secondary: rgba(30, 41, 59, 0.4);
   --text-main: #f8fafc;      /* slate-50 */
   --text-muted: #94a3b8;     /* slate-400 */
-  --border-main: #1e293b;    /* slate-800 */
+  --border-main: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {
   body {
     @apply bg-bg-page text-text-main font-sans antialiased transition-colors duration-300;
     min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%), 
+        radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.08), transparent 25%);
+    background-attachment: fixed;
   }
   
-  /* Remove hardcoded gradient on body, apply to specific dark mode if needed or remove entirely for cleaner look */
   .dark body {
-     background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 75%);
+     background-image: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 40%), 
+        radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.15), transparent 40%),
+        radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 75%);
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight font-bold text-text-main;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply backdrop-blur-xl bg-bg-surface border border-border-main shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-lg bg-bg-surface border border-border-main shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-accent;
   }
 }

@@ -1,54 +1,54 @@
 ---
 ---
 
-<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden" x-data="{ downloadModalOpen: false }" @open-download-modal.window="downloadModalOpen = true">
+<section class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden" x-data="{ downloadModalOpen: false }" @open-download-modal.window="downloadModalOpen = true">
     <!-- Background Elements -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl mix-blend-screen animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-secondary/20 rounded-full blur-3xl mix-blend-screen animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-primary/20 rounded-full blur-[100px] mix-blend-screen animate-pulse duration-[4000ms]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-secondary/20 rounded-full blur-[100px] mix-blend-screen animate-pulse duration-[4000ms]" style="animation-delay: 2s;"></div>
     </div>
 
     <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="inline-flex items-center px-3 py-1 rounded-full bg-bg-surface border border-border-main text-brand-accent text-sm font-medium mb-8 backdrop-blur-sm shadow-sm">
-            <span class="flex h-2 w-2 rounded-full bg-brand-accent mr-2 animate-ping"></span>
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-bg-surface/50 border border-brand-primary/20 text-brand-primary text-sm font-medium mb-8 backdrop-blur-md shadow-lg shadow-brand-primary/5">
+            <span class="flex h-2 w-2 rounded-full bg-brand-primary mr-2 animate-ping"></span>
             <span>New: 50+ Server Locations Added</span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-text-main leading-tight">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-text-main leading-tight tracking-tight drop-shadow-sm">
             Enjoy yourself <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">online</span>
         </h1>
         
-        <p class="text-xl md:text-2xl font-semibold text-text-main mb-4">
-            Safer/Speed/Trusted Anywhere You Go
+        <p class="text-xl md:text-2xl font-medium text-text-main mb-6 tracking-wide">
+            Safer. Faster. Trusted.
         </p>
 
         <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
-            It's a completely trusted app. We encrypt your network activity and hide your IP address. We never log, track, or share your network data.
+            Experience the ultimate freedom with Ferro VPN. Military-grade encryption, zero logs, and lightning-fast speeds wrapped in a premium, user-friendly interface.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button @click="downloadModalOpen = true" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-semibold transition-all shadow-[0_0_40px_rgba(14,165,233,0.4)] hover:shadow-[0_0_60px_rgba(99,102,241,0.5)] transform hover:-translate-y-1 cursor-pointer">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <button @click="downloadModalOpen = true" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-primary hover:bg-brand-secondary text-white font-semibold transition-all shadow-lg hover:shadow-brand-primary/40 transform hover:-translate-y-1 cursor-pointer">
                 Get Started Now
             </button>
-            <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-bg-surface hover:bg-bg-surface-secondary border border-border-main text-text-main font-semibold transition-all backdrop-blur-sm hover:border-brand-primary/50 shadow-sm">
+            <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-text-main font-semibold transition-all backdrop-blur-sm hover:border-brand-primary/30 shadow-sm">
                 View Plans
             </a>
         </div>
         
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-             <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-black text-white hover:bg-gray-900 border border-gray-800 transition-all hover:scale-105">
-                <svg class="h-8 w-8" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 opacity-80 hover:opacity-100 transition-opacity">
+             <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="glass-panel px-6 py-3 rounded-2xl flex items-center gap-4 hover:border-brand-primary/40 transition-colors group">
+                <svg class="h-8 w-8 text-text-main" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M25.405 23.368c-0.895 1.309-1.842 2.607-3.235 2.636-1.409 0.027-1.862-0.835-3.479-0.835-1.615 0-2.119 0.809-3.447 0.864-1.353 0.054-2.385-1.356-3.245-2.597-1.769-2.553-3.12-7.202-1.305-10.038 0.908-1.414 2.531-2.309 4.296-2.341 1.309-0.025 2.544 0.88 3.344 0.88 0.799 0 2.295-1.087 3.865-0.927 0.655 0.027 2.492 0.265 3.67 1.989-0.091 0.056-2.193 1.282-2.169 3.818 0.025 3.033 2.671 4.098 2.695 4.109-0.021 0.063-0.421 1.455-1.091 2.443z" />
                     <path d="M21.905 10.375c0.75-0.916 1.256-2.174 1.118-3.444-1.082 0.044-2.392 0.72-3.17 1.629-0.692 0.803-1.299 2.083-1.135 3.313 1.208 0.093 2.438-0.589 3.187-1.498z" />
                 </svg>
                 <div class="flex flex-col items-start leading-none">
-                    <span class="text-xs uppercase opacity-80">Download on the</span>
-                    <span class="text-xl font-bold">App Store</span>
+                    <span class="text-xs uppercase opacity-70 tracking-wider">Download on the</span>
+                    <span class="text-lg font-bold">App Store</span>
                 </div>
              </a>
              
-             <a href="https://play.google.com/store/apps/details?id=com.vietts.vpn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-black text-white hover:bg-gray-900 border border-gray-800 transition-all hover:scale-105">
-                <svg class="h-8 w-8" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+             <a href="https://play.google.com/store/apps/details?id=com.vietts.vpn" target="_blank" rel="noopener noreferrer" class="glass-panel px-6 py-3 rounded-2xl flex items-center gap-4 hover:border-brand-primary/40 transition-colors group">
+                <svg class="h-8 w-8 text-text-main" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="g1" gradientUnits="userSpaceOnUse" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientTransform="matrix(1 0 0 -1 0 42)">
                             <stop offset="0" stop-color="#00a0ff"/>
@@ -80,50 +80,36 @@
                     <path fill="url(#g2)" d="M27 24.3l-4.1-4.1V19.9l4.1-4.1.1.1 4.9 2.8c1.4.8 1.4 2.1 0 2.9l-5 2.7z"/>
                     <path fill="url(#g3)" d="M27.1 24.2L22.9 20 10.4 32.5c.5.5 1.2.5 2.1.1l14.6-8.4"/>
                     <path fill="url(#g4)" d="M27.1 15.8L12.5 7.5c-.9-.5-1.6-.4-2.1.1L22.9 20l4.2-4.2z"/>
-                    <path opacity=".2" d="M27 24.1l-14.5 8.2c-.8.5-1.5.4-2 0l-.1.1.1.1c.5.4 1.2.5 2 0L27 24.1z"/>
-                    <path opacity=".12" d="M10.4 32.3c-.3-.3-.4-.8-.4-1.4v.1c0 .6.2 1.1.5 1.4v-.1h-.1zM32 21.3l-5 2.8.1.1 4.9-2.8c.7-.4 1-.9 1-1.4 0 .5-.4.9-1 1.3z"/>
-                    <path opacity=".25" fill="#fff" d="M12.5 7.6L32 18.7c.6.4 1 .8 1 1.3 0-.5-.3-1-1-1.4L12.5 7.5c-1.4-.8-2.5-.2-2.5 1.4V9c0-1.5 1.1-2.2 2.5-1.4z"/>
                 </svg>
                 <div class="flex flex-col items-start leading-none">
-                    <span class="text-xs uppercase opacity-80">Get it on</span>
-                    <span class="text-xl font-bold">Google Play</span>
-                </div>
-             </a>
-             
-             <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-black text-white hover:bg-gray-900 border border-gray-800 transition-all hover:scale-105">
-                <svg class="h-8 w-8" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.405 23.368c-0.895 1.309-1.842 2.607-3.235 2.636-1.409 0.027-1.862-0.835-3.479-0.835-1.615 0-2.119 0.809-3.447 0.864-1.353 0.054-2.385-1.356-3.245-2.597-1.769-2.553-3.12-7.202-1.305-10.038 0.908-1.414 2.531-2.309 4.296-2.341 1.309-0.025 2.544 0.88 3.344 0.88 0.799 0 2.295-1.087 3.865-0.927 0.655 0.027 2.492 0.265 3.67 1.989-0.091 0.056-2.193 1.282-2.169 3.818 0.025 3.033 2.671 4.098 2.695 4.109-0.021 0.063-0.421 1.455-1.091 2.443z" />
-                    <path d="M21.905 10.375c0.75-0.916 1.256-2.174 1.118-3.444-1.082 0.044-2.392 0.72-3.17 1.629-0.692 0.803-1.299 2.083-1.135 3.313 1.208 0.093 2.438-0.589 3.187-1.498z" />
-                </svg>
-                <div class="flex flex-col items-start leading-none">
-                    <span class="text-xs uppercase opacity-80">Download for</span>
-                    <span class="text-xl font-bold">macOS</span>
+                    <span class="text-xs uppercase opacity-70 tracking-wider">Get it on</span>
+                    <span class="text-lg font-bold">Google Play</span>
                 </div>
              </a>
         </div>
 
         <!-- Trust Indicators -->
-        <div class="mt-16 pt-8 border-t border-border-main flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="mt-20 pt-10 border-t border-border-main/30 flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
              <!-- Trust Stats -->
-             <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-text-main">100k+</span>
-                <span class="text-sm text-text-muted uppercase tracking-wider">Active Users</span>
+             <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold text-text-main">100k+</span>
+                <span class="text-xs text-text-muted uppercase tracking-widest mt-1">Active Users</span>
              </div>
-             <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-text-main">4.9/5</span>
-                <span class="text-sm text-text-muted uppercase tracking-wider">User Rating</span>
+             <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold text-text-main">4.9/5</span>
+                <span class="text-xs text-text-muted uppercase tracking-widest mt-1">User Rating</span>
              </div>
-             <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-text-main">99.9%</span>
-                <span class="text-sm text-text-muted uppercase tracking-wider">Uptime</span>
+             <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold text-text-main">99.9%</span>
+                <span class="text-xs text-text-muted uppercase tracking-widest mt-1">Uptime</span>
              </div>
         </div>
     </div>
     
     <!-- Download Modal -->
     <div x-show="downloadModalOpen" style="display: none;" class="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" @click="downloadModalOpen = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
-        <div class="relative bg-bg-surface border border-border-main rounded-2xl p-8 max-w-lg w-full shadow-2xl transform" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95 translate-y-4" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-95 translate-y-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-md" @click="downloadModalOpen = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
+        <div class="relative glass-panel rounded-3xl p-8 max-w-lg w-full transform border border-white/10" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95 translate-y-4" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-95 translate-y-4">
             <button @click="downloadModalOpen = false" class="absolute top-4 right-4 text-text-muted hover:text-text-main">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -135,7 +121,7 @@
             
             <div class="flex flex-col gap-4">
                  <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 border border-border-main hover:border-brand-primary/50 transition-all group">
-                    <div class="p-3 bg-black rounded-lg">
+                    <div class="p-3 bg-black rounded-lg shadow-md">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M25.405 23.368c-0.895 1.309-1.842 2.607-3.235 2.636-1.409 0.027-1.862-0.835-3.479-0.835-1.615 0-2.119 0.809-3.447 0.864-1.353 0.054-2.385-1.356-3.245-2.597-1.769-2.553-3.12-7.202-1.305-10.038 0.908-1.414 2.531-2.309 4.296-2.341 1.309-0.025 2.544 0.88 3.344 0.88 0.799 0 2.295-1.087 3.865-0.927 0.655 0.027 2.492 0.265 3.67 1.989-0.091 0.056-2.193 1.282-2.169 3.818 0.025 3.033 2.671 4.098 2.695 4.109-0.021 0.063-0.421 1.455-1.091 2.443z" />
                             <path d="M21.905 10.375c0.75-0.916 1.256-2.174 1.118-3.444-1.082 0.044-2.392 0.72-3.17 1.629-0.692 0.803-1.299 2.083-1.135 3.313 1.208 0.093 2.438-0.589 3.187-1.498z" />
@@ -153,7 +139,7 @@
                  </a>
                  
                  <a href="https://play.google.com/store/apps/details?id=com.vietts.vpn" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 border border-border-main hover:border-brand-primary/50 transition-all group">
-                    <div class="p-3 bg-black rounded-lg">
+                    <div class="p-3 bg-black rounded-lg shadow-md">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gm1" gradientUnits="userSpaceOnUse" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientTransform="matrix(1 0 0 -1 0 42)">
@@ -200,7 +186,7 @@
                  </a>
 
                  <a href="https://apps.apple.com/us/app/ferro-vpn/id6754163980" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-bg-surface-secondary hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 border border-border-main hover:border-brand-primary/50 transition-all group">
-                    <div class="p-3 bg-black rounded-lg">
+                    <div class="p-3 bg-black rounded-lg shadow-md">
                         <svg class="h-8 w-8 text-white" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M25.405 23.368c-0.895 1.309-1.842 2.607-3.235 2.636-1.409 0.027-1.862-0.835-3.479-0.835-1.615 0-2.119 0.809-3.447 0.864-1.353 0.054-2.385-1.356-3.245-2.597-1.769-2.553-3.12-7.202-1.305-10.038 0.908-1.414 2.531-2.309 4.296-2.341 1.309-0.025 2.544 0.88 3.344 0.88 0.799 0 2.295-1.087 3.865-0.927 0.655 0.027 2.492 0.265 3.67 1.989-0.091 0.056-2.193 1.282-2.169 3.818 0.025 3.033 2.671 4.098 2.695 4.109-0.021 0.063-0.421 1.455-1.091 2.443z" />
                             <path d="M21.905 10.375c0.75-0.916 1.256-2.174 1.118-3.444-1.082 0.044-2.392 0.72-3.17 1.629-0.692 0.803-1.299 2.083-1.135 3.313 1.208 0.093 2.438-0.589 3.187-1.498z" />
