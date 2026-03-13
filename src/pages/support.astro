@@ -34,7 +34,7 @@ import Footer from '../components/common/Footer.astro';
                             class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
                             style="display: none;"
                         >
-                            <p class="mt-4">Simply download the Ferro VPN app, sign in (or use the free version), select a server location from the list, and tap the large "Connect" button. When the shield icon turns green, you are securely connected.</p>
+                            <p class="mt-4">Download the Ferro VPN app, sign in, choose a server location, and tap the "Connect" button. When the shield icon turns green, you are securely connected.</p>
                         </div>
                     </div>
 
@@ -57,13 +57,13 @@ import Footer from '../components/common/Footer.astro';
                         </div>
                     </div>
 
-                     <!-- FAQ 3 -->
+                    <!-- FAQ 3 -->
                      <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
                         <button 
                             @click="active = (active === 3 ? null : 3)"
                             class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
                         >
-                            <span class="font-medium text-text-main">How many devices can I use?</span>
+                            <span class="font-medium text-text-main">How many devices or sessions can I use?</span>
                             <span class="text-brand-primary text-xl font-bold" x-text="active === 3 ? '−' : '+'">+</span>
                         </button>
                         <div 
@@ -72,7 +72,7 @@ import Footer from '../components/common/Footer.astro';
                             class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
                             style="display: none;"
                         >
-                            <p class="mt-4">Free users can use Ferro VPN on one device. <strong>Premium (Pro) users</strong> can connect up to <strong>2 devices</strong> simultaneously with a single subscription.</p>
+                            <p class="mt-4">Each account allows <strong>one active session at a time</strong>. This applies to all plans, including Pro. If you sign in on another device, the current session will be disconnected.</p>
                         </div>
                     </div>
 
@@ -117,6 +117,139 @@ import Footer from '../components/common/Footer.astro';
                             <p class="mt-4">Yes! <strong>Premium users</strong> benefit from our integrated <strong>Advanced Ad Blocker</strong> technology. This powerful feature automatically blocks annoying ads, trackers, and malicious websites, giving you a cleaner, faster, and safer browsing experience.</p>
                         </div>
                     </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
+                        <button 
+                            @click="active = (active === 6 ? null : 6)"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
+                        >
+                            <span class="font-medium text-text-main">Is there a free plan or trial?</span>
+                            <span class="text-brand-primary text-xl font-bold" x-text="active === 6 ? '−' : '+'">+</span>
+                        </button>
+                        <div 
+                            x-show="active === 6" 
+                            x-collapse
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
+                            style="display: none;"
+                        >
+                            <p class="mt-4">No. Ferro VPN is a paid service and does not offer a free plan.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
+                        <button 
+                            @click="active = (active === 7 ? null : 7)"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
+                        >
+                            <span class="font-medium text-text-main">What happens if I sign in on another device?</span>
+                            <span class="text-brand-primary text-xl font-bold" x-text="active === 7 ? '−' : '+'">+</span>
+                        </button>
+                        <div 
+                            x-show="active === 7" 
+                            x-collapse
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
+                            style="display: none;"
+                        >
+                            <p class="mt-4">Your current session will be logged out. Each account supports only one active session at a time.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
+                        <button 
+                            @click="active = (active === 8 ? null : 8)"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
+                        >
+                            <span class="font-medium text-text-main">Which devices and platforms are supported?</span>
+                            <span class="text-brand-primary text-xl font-bold" x-text="active === 8 ? '−' : '+'">+</span>
+                        </button>
+                        <div 
+                            x-show="active === 8" 
+                            x-collapse
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
+                            style="display: none;"
+                        >
+                            <p class="mt-4">We support the platforms listed in the app stores. Please check the store listing for the latest compatibility details.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 9 -->
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
+                        <button 
+                            @click="active = (active === 9 ? null : 9)"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
+                        >
+                            <span class="font-medium text-text-main">Do you keep activity logs?</span>
+                            <span class="text-brand-primary text-xl font-bold" x-text="active === 9 ? '−' : '+'">+</span>
+                        </button>
+                        <div 
+                            x-show="active === 9" 
+                            x-collapse
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
+                            style="display: none;"
+                        >
+                            <p class="mt-4">No. Ferro VPN operates a strict no-logs policy as described in our Privacy Policy.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 10 -->
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
+                        <button 
+                            @click="active = (active === 10 ? null : 10)"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
+                        >
+                            <span class="font-medium text-text-main">Why can I not access some sites while connected?</span>
+                            <span class="text-brand-primary text-xl font-bold" x-text="active === 10 ? '−' : '+'">+</span>
+                        </button>
+                        <div 
+                            x-show="active === 10" 
+                            x-collapse
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
+                            style="display: none;"
+                        >
+                            <p class="mt-4">Some services block VPN traffic. Try switching to a different server location or disconnecting temporarily to access the site.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 11 -->
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
+                        <button 
+                            @click="active = (active === 11 ? null : 11)"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
+                        >
+                            <span class="font-medium text-text-main">How do I change servers or regions?</span>
+                            <span class="text-brand-primary text-xl font-bold" x-text="active === 11 ? '−' : '+'">+</span>
+                        </button>
+                        <div 
+                            x-show="active === 11" 
+                            x-collapse
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
+                            style="display: none;"
+                        >
+                            <p class="mt-4">Open the app, select your preferred location from the server list, then tap Connect.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 12 -->
+                    <div class="border border-border-main rounded-xl overflow-hidden bg-bg-surface-secondary">
+                        <button 
+                            @click="active = (active === 12 ? null : 12)"
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bg-surface transition-colors focus:outline-none"
+                        >
+                            <span class="font-medium text-text-main">Can I get a refund?</span>
+                            <span class="text-brand-primary text-xl font-bold" x-text="active === 12 ? '−' : '+'">+</span>
+                        </button>
+                        <div 
+                            x-show="active === 12" 
+                            x-collapse
+                            class="px-6 pb-4 text-text-muted border-t border-border-main bg-bg-surface/50"
+                            style="display: none;"
+                        >
+                            <p class="mt-4">All sales are final except where required by law. If you purchased via Apple or Google, refunds are handled by their respective policies.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -130,6 +263,9 @@ import Footer from '../components/common/Footer.astro';
                     </svg>
                     Contact Support
                 </a>
+                <p class="mt-6 text-sm text-text-muted">
+                    Website: <a href="https://puresoftltd.com/" class="text-brand-primary hover:text-text-main transition-colors" rel="noopener" target="_blank">https://puresoftltd.com/</a>
+                </p>
             </div>
         </div>
     </main>

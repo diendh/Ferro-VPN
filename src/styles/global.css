@@ -1,42 +1,62 @@
 @import "tailwindcss";
 
+/* ============================================================
+   FERRO VPN — Centralized Color System
+   Mapped from Flutter AppColors for consistency across platforms.
+   To rebrand, edit ONLY the @theme block + :root / .dark variables.
+   ============================================================ */
+
 @theme {
-  --color-brand-primary: #3B82F6; /* blue-500 - Trustworthy Blue */
-  --color-brand-secondary: #6366f1; /* indigo-500 */
-  --color-brand-accent: #06b6d4; /* cyan-500 - Tech/Speed */
-  --color-brand-dark: #0f172a; /* slate-900 */
-  
-  /* Semantic Colors mapped to variables */
+  /* ── Brand Palette (from Flutter AppColors) ── */
+  --color-brand-primary: #114AD0;        /* AppColors.primary */
+  --color-brand-secondary: #1D4ED8;      /* AppColors.primaryStrong (hover / strong) */
+  --color-brand-accent: #3B82F6;         /* AppColors.primaryMid (lighter accent) */
+  --color-brand-primary-surface: #EFF6FF;/* AppColors.primarySurface */
+  --color-brand-dark: #0F172A;           /* AppColors.textPrimary / dark base */
+
+  /* ── Semantic Status Colors ── */
+  --color-danger: #EF4444;               /* AppColors.red */
+  --color-warning: #F59E0B;              /* AppColors.amber */
+
+  /* ── Semantic Surface / Text / Border (resolved via CSS vars) ── */
   --color-bg-page: var(--bg-page);
   --color-bg-surface: var(--bg-surface);
   --color-bg-surface-secondary: var(--bg-surface-secondary);
   --color-text-main: var(--text-main);
   --color-text-muted: var(--text-muted);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-quaternary: var(--text-quaternary);
   --color-border-main: var(--border-main);
-  
+
+  /* ── Typography ── */
   --font-sans: 'Inter', system-ui, sans-serif;
-  
-  --radius-card: 1.5rem; /* 24px - Softer corners */
-  --radius-button: 9999px; /* Pill shape */
+
+  /* ── Radii ── */
+  --radius-card: 1.5rem;    /* 24px */
+  --radius-button: 9999px;  /* Pill shape */
 }
 
-/* Light Theme */
+/* ── Light Theme ── */
 :root {
-  --bg-page: #f0f4f8;        /* Light blue-grey tint */
-  --bg-surface: rgba(255, 255, 255, 0.7); /* Glassy white */
-  --bg-surface-secondary: rgba(241, 245, 249, 0.5);
-  --text-main: #0f172a;      /* slate-900 */
-  --text-muted: #475569;     /* slate-600 */
-  --border-main: rgba(226, 232, 240, 0.6);
+  --bg-page: #F6F6F8;                          /* AppColors.background */
+  --bg-surface: rgba(255, 255, 255, 0.85);     /* AppColors.surface (glassy) */
+  --bg-surface-secondary: rgba(239, 246, 255, 0.5); /* primarySurface tinted */
+  --text-main: #0F172A;                         /* AppColors.textPrimary */
+  --text-muted: #6B7280;                        /* AppColors.textSecondary */
+  --text-tertiary: #94A3B8;                     /* AppColors.textTertiary */
+  --text-quaternary: #9CA3AF;                   /* AppColors.textQuaternary */
+  --border-main: rgba(229, 231, 235, 0.8);     /* AppColors.borderLight */
 }
 
-/* Dark Theme (Default/Preferred for Premium) */
+/* ── Dark Theme (Default / Preferred for Premium) ── */
 .dark {
-  --bg-page: #020617;        /* slate-950 - Deep dark */
-  --bg-surface: rgba(15, 23, 42, 0.6);     /* Glassy dark */
+  --bg-page: #020617;                          /* slate-950 */
+  --bg-surface: rgba(31, 41, 55, 0.6);        /* AppColors.surfaceDark (glassy) */
   --bg-surface-secondary: rgba(30, 41, 59, 0.4);
-  --text-main: #f8fafc;      /* slate-50 */
-  --text-muted: #94a3b8;     /* slate-400 */
+  --text-main: #f8fafc;                        /* slate-50 */
+  --text-muted: #94A3B8;                       /* AppColors.textTertiary */
+  --text-tertiary: #9CA3AF;                    /* AppColors.textQuaternary */
+  --text-quaternary: #6B7280;
   --border-main: rgba(255, 255, 255, 0.1);
 }
 
@@ -44,16 +64,16 @@
   body {
     @apply bg-bg-page text-text-main font-sans antialiased transition-colors duration-300;
     min-height: 100vh;
-    background-image: 
-        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%), 
-        radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.08), transparent 25%);
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(17, 74, 208, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(29, 78, 216, 0.08), transparent 25%);
     background-attachment: fixed;
   }
-  
+
   .dark body {
-     background-image: 
-        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 40%), 
-        radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.15), transparent 40%),
+     background-image:
+        radial-gradient(circle at 15% 50%, rgba(17, 74, 208, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(29, 78, 216, 0.15), transparent 40%),
         radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 75%);
   }
 
@@ -66,11 +86,11 @@
   .glass-panel {
     @apply backdrop-blur-xl bg-bg-surface border border-border-main shadow-2xl;
   }
-  
+
   .glass-card {
     @apply backdrop-blur-lg bg-bg-surface border border-border-main shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-accent;
   }
