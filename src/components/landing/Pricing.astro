@@ -1,7 +1,7 @@
 ---
 ---
 
-<section id="pricing" class="hidden py-24 overflow-hidden relative" 
+<section id="pricing" class="py-24 overflow-hidden relative" 
     x-data="{ annual: true, showModal: false, selectedPlan: '', selectedCrypto: 'BTC', step: 1 }"
     x-init="$watch('showModal', value => document.body.classList.toggle('overflow-hidden', value))">
     <!-- Background Glow -->
@@ -13,44 +13,29 @@
     <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-bold mb-6 text-text-main">
-                Simple, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Transparent</span> Pricing
+                Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Plans</span>
             </h2>
-            
-            <!-- Toggle Switch -->
-            <div class="flex items-center justify-center gap-6 mt-8">
-                <span class="text-lg transition-colors duration-300" :class="!annual ? 'text-text-main font-semibold' : 'text-text-muted'">Monthly</span>
-                <button 
-                    class="relative w-20 h-10 rounded-full bg-bg-surface/50 border border-brand-primary/30 backdrop-blur-sm transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary/50"
-                    @click="annual = !annual"
-                    aria-label="Toggle billing cycle"
-                >
-                    <div 
-                        class="absolute top-1 left-1 w-8 h-8 rounded-full bg-brand-primary shadow-[0_0_15px_rgba(17,74,208,0.5)] transition-transform duration-300 transform"
-                        :class="annual ? 'translate-x-10' : 'translate-x-0'"
-                    ></div>
-                </button>
-                <div class="flex items-center gap-2">
-                    <span class="text-lg transition-colors duration-300" :class="annual ? 'text-text-main font-semibold' : 'text-text-muted'">Yearly</span>
-                    <span class="px-2 py-1 rounded-md bg-brand-accent/20 text-brand-accent text-xs font-bold uppercase tracking-wider">-20%</span>
-                </div>
-            </div>
+            <p class="text-text-muted text-lg max-w-2xl mx-auto">Choose the plan that fits your needs. Both plans include full access to all premium features.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-            <!-- Basic Plan -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+            <!-- Monthly Plan -->
             <div class="glass-card rounded-3xl p-8 flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2">
-                <h3 class="text-2xl font-bold mb-2 text-text-main">Basic</h3>
+                <h3 class="text-2xl font-bold mb-2 text-text-main">Monthly Plan</h3>
                 <div class="text-4xl font-bold mb-4 text-text-main">
-                    <span x-text="annual ? '$3.99' : '$4.99'">$4.99</span><span class="text-sm text-text-muted font-normal">/mo</span>
+                    $9.99<span class="text-sm text-text-muted font-normal">/mo</span>
                 </div>
-                <p class="text-text-muted mb-8 text-sm leading-relaxed">Essential privacy for casual users.</p>
+                <p class="text-text-muted mb-8 text-sm leading-relaxed">Flexible month-to-month access. Cancel anytime.</p>
                 <ul class="space-y-4 mb-8 flex-grow">
                     {[
-                        "3 Devices",
-                        "High Speed",
-                        "Unlimited Bandwidth",
-                        "No Logs Policy",
-                        "Ad Blocking"
+                        "Stable ping for the hottest games",
+                        "Smooth high-quality streaming",
+                        "256-bit WireGuard encryption",
+                        "100+ global server locations",
+                        "Advanced Ad & Malware Blocking",
+                        "No-logs privacy policy",
+                        "Unlimited Bandwidth & High Speed",
+                        "Priority 24/7 Support"
                     ].map(item => (
                         <li class="flex items-center text-text-muted">
                             <svg class="w-5 h-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
@@ -58,25 +43,27 @@
                         </li>
                     ))}
                 </ul>
-                <button @click="selectedPlan = 'Basic'; showModal = true; step = 1" class="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-text-main font-semibold transition-all backdrop-blur-sm">Choose Basic</button>
+                <button @click="selectedPlan = 'Monthly'; showModal = true; step = 1" class="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-text-main font-semibold transition-all backdrop-blur-sm">Get Monthly</button>
             </div>
 
-            <!-- Pro Plan (Feautured) -->
-            <div class="glass-panel p-8 rounded-3xl border-brand-primary/50 relative transform scale-105 z-10 shadow-[0_0_40px_rgba(17,74,208,0.15)]">
-                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-primary to-brand-accent text-white text-xs font-bold px-6 py-2 rounded-full uppercase tracking-wider shadow-lg shadow-brand-primary/20">Most Popular</div>
-                <h3 class="text-2xl font-bold mb-2 text-text-main">Pro</h3>
+            <!-- Yearly Plan (Featured) -->
+            <div class="glass-panel p-8 rounded-3xl border-brand-primary/50 relative transform md:scale-105 z-10 shadow-[0_0_40px_rgba(17,74,208,0.15)] flex flex-col h-full">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-primary to-brand-accent text-white text-xs font-bold px-6 py-2 rounded-full uppercase tracking-wider shadow-lg shadow-brand-primary/20 whitespace-nowrap">Best Value - Save 70%</div>
+                <h3 class="text-2xl font-bold mb-2 text-text-main">Yearly Plan</h3>
                 <div class="text-4xl font-bold mb-4 text-brand-primary">
-                    <span x-text="annual ? '$7.99' : '$9.99'">$9.99</span><span class="text-sm text-text-muted font-normal">/mo</span>
+                    $4.16<span class="text-sm text-text-muted font-normal">/mo</span>
                 </div>
-                <p class="text-text-muted mb-8 text-sm leading-relaxed">Best for streaming & multi-device.</p>
+                <p class="text-text-muted mb-8 text-sm leading-relaxed">Billed at $49.99 per year. Our most popular choice.</p>
                 <ul class="space-y-4 mb-8 flex-grow">
-                     {[
-                        "Unlock all 100+ Locations",
-                        "10 Devices",
-                        "Multi-hop (Double VPN)",
-                        "Streaming & Gaming Optimization",
-                        "Advanced Ad Blocking",
-                        "Priority Support"
+                    {[
+                        "Stable ping for the hottest games",
+                        "Smooth high-quality streaming",
+                        "256-bit WireGuard encryption",
+                        "100+ global server locations",
+                        "Advanced Ad & Malware Blocking",
+                        "No-logs privacy policy",
+                        "Unlimited Bandwidth & High Speed",
+                        "Priority 24/7 Support"
                     ].map(item => (
                         <li class="flex items-center text-text-main font-medium">
                             <svg class="w-5 h-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
@@ -84,7 +71,7 @@
                         </li>
                     ))}
                 </ul>
-                 <button @click="selectedPlan = 'Pro'; showModal = true; step = 1" class="w-full py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(17,74,208,0.4)] hover:shadow-[0_0_30px_rgba(17,74,208,0.6)] hover:-translate-y-1">Go Premium</button>
+                <button @click="selectedPlan = 'Yearly'; showModal = true; step = 1" class="w-full py-4 rounded-xl bg-brand-primary hover:bg-brand-secondary text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(17,74,208,0.4)] hover:shadow-[0_0_30px_rgba(17,74,208,0.6)] hover:-translate-y-1">Get Yearly</button>
             </div>
 
             <!-- Ultimate Plan -->
@@ -100,7 +87,7 @@
                         "Max Speed (10Gbps)",
                         "Dedicated IP",
                         "Priority 24/7 Support",
-                        "Ad Blocking"
+                        "Advanced Ad & Malware Blocking"
                     ].map(item => (
                         <li class="flex items-center text-text-muted">
                             <svg class="w-5 h-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
@@ -110,6 +97,7 @@
                 </ul>
                 <button disabled class="w-full py-4 rounded-xl bg-white/5 border border-white/5 text-text-muted font-semibold cursor-not-allowed">Waitlist</button>
             </div>
+        </div>
         </div>
 
         <!-- Payment Methods -->
