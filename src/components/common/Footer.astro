@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import logoText from '../../assets/logo_text.svg';
+
 ---
 
 <footer class="relative mt-20 border-t border-border-main/50 text-sm text-text-muted transition-colors duration-300 overflow-hidden">
@@ -9,7 +8,7 @@ import logoText from '../../assets/logo_text.svg';
         <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
             <div class="flex flex-col items-center md:items-start">
                 <a href="/" class="inline-block mb-4 hover:opacity-80 transition-opacity">
-                    <Image src={logoText} alt="Ferro" class="h-8 w-auto" />
+                    <img src="/logo_text.svg" alt="Ferro" class="h-8 w-auto" />
                 </a>
                 <p class="max-w-xs text-text-muted/80">
                     Trusted by millions for ultimate privacy and speed. Secure your digital life with Ferro.
