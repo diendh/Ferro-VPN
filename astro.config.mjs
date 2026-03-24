@@ -7,8 +7,10 @@ import alpinejs from '@astrojs/alpinejs';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ferro.vietts.app',
-  adapter: cloudflare(),
+  site: 'https://ferrovpn.com',
+  adapter: cloudflare({
+    imageService: 'passthrough'
+  }),
   build: {
     assets: 'assets'
   },
