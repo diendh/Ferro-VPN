@@ -106,15 +106,15 @@ Dark-first, clean typography, subtle gradients, generous whitespace.
 
 ### Deployment
 
-- **Target**: Vercel (free tier) or Cloudflare Pages
+- **Target**: Cloudflare Pages (configured with `@astrojs/cloudflare` adapter)
 - Auto-deploy from Git
-- 100% static = zero server cost
+- Domain: `ferrovpn.com`
 
 ## Implementation Considerations
 
 - Ferro logo/brand assets from existing Flutter app can be reused
 - App store download links already exist
-- Server list (13+ countries) can be pulled from existing config
+- Server list (3000+ servers, 90+ countries) can be pulled from existing config
 - Subscription pricing from RevenueCat configuration
 
 ## Success Metrics
