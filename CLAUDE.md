@@ -1,0 +1,1 @@
+Luôn ưu tiên phản hồi, giải thích và tóm tắt bằng tiếng Việt. Giữ nguyên các thuật ngữ kỹ thuật chuyên môn nếu không có từ tương đương chính xác trong tiếng Việt

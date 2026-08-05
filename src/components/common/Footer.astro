@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import logoText from '../../assets/logo_text.svg';
+
 ---
 
 <footer class="relative mt-20 border-t border-border-main/50 text-sm text-text-muted transition-colors duration-300 overflow-hidden">
@@ -9,21 +8,37 @@ import logoText from '../../assets/logo_text.svg';
         <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
             <div class="flex flex-col items-center md:items-start">
                 <a href="/" class="inline-block mb-4 hover:opacity-80 transition-opacity">
-                    <Image src={logoText} alt="Ferro" class="h-8 w-auto" />
+                    <img src="/logo_text.svg" alt="Ferro" class="h-8 w-auto" />
                 </a>
                 <p class="max-w-xs text-text-muted/80">
                     Trusted by millions for ultimate privacy and speed. Secure your digital life with Ferro.
                 </p>
+                <div class="mt-4 text-xs text-text-muted/80 font-medium">
+                    Co-owned and operated by:
+                </div>
+                
                 <a
                     href="https://puresoftltd.com/"
-                    class="mt-4 text-xs text-text-muted/80 hover:text-brand-primary transition-colors"
+                    class="mt-2 inline-block text-xs text-text-muted/80 hover:text-brand-primary transition-colors font-medium"
                     rel="noopener"
                     target="_blank"
                 >
-                    https://puresoftltd.com/
+                    Puresoft Limited
                 </a>
-                <div class="mt-2 text-xs text-text-muted/70">
-                    PureSoft Limited, RM C 7/F WORLD TRUST TWR, 50 STANLEY ST, CENTRAL, Hong Kong
+                <div class="mt-1 text-xs text-text-muted/70">
+                    RM C 7/F WORLD TRUST TWR, 50 STANLEY ST, CENTRAL, Hong Kong
+                </div>
+
+                <a
+                    href="https://vietts.io/"
+                    class="mt-3 inline-block text-xs text-text-muted/80 hover:text-brand-primary transition-colors font-medium"
+                    rel="noopener"
+                    target="_blank"
+                >
+                    VIETTS SOFTWARE
+                </a>
+                <div class="mt-1 text-xs text-text-muted/70">
+                    Số 64 Ngõ 4 Nguyễn Văn Lộc, Mộ Lao, Hà Đông, Hà Nội, VN
                 </div>
                 <div class="mt-4 text-xs opacity-60">
                     &copy; {new Date().getFullYear()} Ferro. All rights reserved.
@@ -35,6 +50,7 @@ import logoText from '../../assets/logo_text.svg';
                 <a href="/terms" class="hover:text-brand-primary transition-colors font-medium">Terms of Service</a>
                 <a href="/support" class="hover:text-brand-primary transition-colors font-medium">Support</a>
                 <a href="/contact" class="hover:text-brand-primary transition-colors font-medium">Contact</a>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" class="hover:text-brand-primary transition-colors font-medium" rel="noopener" target="_blank">EULA</a>
             </div>
         </div>
     </div>
